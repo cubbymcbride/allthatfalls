@@ -4,6 +4,7 @@ const session = require("express-session");
 const massive = require("massive");
 
 const AuthCtrl = require('./controllers/auth')
+const PostCtrl = require('./controllers/post')
 
 const app = express()
 
@@ -31,3 +32,7 @@ app.post('/auth/register', AuthCtrl.register)
 app.post('/auth/login', AuthCtrl.login)
 app.get('/auth/logout', AuthCtrl.logout)
 app.get('/auth/currentAdmin', AuthCtrl.currentAdmin)
+
+app.get('/api/posts', PostCtrl.read)
+app.get('/api/posts/:id', PostCtrl.getPost)
+app.post('/api/posts', PostCtrl.create)

@@ -33,7 +33,6 @@ module.exports = {
             }
 
             let { id: user_id } = req.session.user
-            // let user_id = req.session.user.id
             let newPost = { user_id, title, content }
             let posts = await db.createPost(newPost)
             res.send(posts)
