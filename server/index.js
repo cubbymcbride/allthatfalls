@@ -1,0 +1,33 @@
+require("dotenv").config();
+const express = require("express");
+const session = require("express-session");
+const massive = require("massive");
+
+const AuthCtrl = require('./controllers/auth')
+
+const app = express()
+
+const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
+
+massive(CONNECTION_STRING).then(db => {
+    app.set('db', db)
+    console.log('db is connected')
+    app.listen(SERVER_PORT, () => console.log('port on', SERVER_PORT))
+  })
+
+app.use(express.json());
+app.use(
+  session({
+    secret: SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24 * 365
+    }
+  })
+);
+
+app.post('/auth/register', AuthCtrl.register)
+app.post('/auth/login', AuthCtrl.login)
+app.get('/auth/logout', AuthCtrl.logout)
+app.get('/auth/currentAdmin', AuthCtrl.currentAdmin)
