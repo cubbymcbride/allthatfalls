@@ -4,6 +4,6 @@ import Nav from  './components/Nav/Nav'
 
 export default (
     <Switch>
-        <Route path/>
+        <Route/>
     </Switch>
 )
