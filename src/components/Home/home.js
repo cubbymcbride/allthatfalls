@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import './home.css'
+import Posts from '../Posts/posts'
 import blackT from '../../images/ATFLogoBlackTransparent.png'
 
 
@@ -14,6 +15,7 @@ function Home(props) {
                 <p>{post.author}</p>
                 <hr/>
                 <p>{post.content}</p>
+                
             </div>}
               
         </div>
@@ -33,7 +35,5 @@ let styles = {
     backgroundColor: '#696969',
     height: '100vh',
     width: '100vw',
-    backgroundImage: blackT
-    
   }
 }

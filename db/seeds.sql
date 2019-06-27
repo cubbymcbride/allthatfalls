@@ -16,7 +16,7 @@ create table post (
 post_id serial primary key,
 title varchar(500),
 content varchar(5000000),
-img varchar(5000),
+img varchar,
 user_id int references admins(user_id)
 );
 

@@ -33,13 +33,13 @@ export default function(state = initialState, action) {
 export function getPosts() {
     return {
         type: GET_POSTS,
-        payload: axios.get('/api/posts')
+        payload: axios.get('/api/post')
     }
 }
 
 export function getPost(id) {
     return {
         type: GET_POST,
-        payload: axios.get(`/api/posts/${id}`)
+        payload: axios.get(`/api/post/${id}`)
     }
 }
