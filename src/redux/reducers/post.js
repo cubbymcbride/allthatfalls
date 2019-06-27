@@ -1,44 +1,45 @@
-module.exports = {
-    read: async (req, res) => {
-        try {
-            let db = req.app.get('db')
-            let posts = await db.getPosts()
-            res.send(posts)
-        } catch (error) {
-            console.log('error fetching posts:', error)
-            res.status(500).send(error) 
-        }
-    },
+import axios from 'axios'
 
-    getPost: async (req, res) => {
-        try {
-            let db = req.app.get('db')
-            let { id } = req.params 
-            let posts = await db.getPost(id)
-            let post = posts[0]
-            res.send(post)
-        } catch (error) {
-            console.log('error fetching posts:', error)
-            res.status(500).send(error)
-        }
-    },
+const GET_POSTS = 'GET_POSTS'
+const GET_POSTS_FULFILLED = 'GET_POSTS_FULFILLED'
+const GET_POSTS_PENDING = 'GET_POSTS_PENDING'
 
-    create: async (req, res) => {
-        try {
-            let db = req.app.get('db')
-            let { title, content } = req.body
+const GET_POST = 'GET_POST'
+const GET_POST_FULFILLED = 'GET_POST_FULFILLED'
+const GET_POST_PENDING = 'GET_POST_PENDING'
 
-            if (!req.session.user) {
-                return res.status(401).send('user not authenticated')
-            }
+let initialState = {
+    data: [],
+    loading: false,
+    selected: null
+}
 
-            let { id: user_id } = req.session.user
-            let newPost = { user_id, title, content }
-            let posts = await db.createPost(newPost)
-            res.send(posts)
-        } catch (error) {
-            console.log('error creating post:', error)
-            res.status(500).send(error)
-        }
+export default function(state = initialState, action) {
+    switch (action.type) {
+        case GET_POSTS_PENDING:
+            return { ...state, loading: true }
+        case GET_POSTS_FULFILLED:
+            return { ...state, loading: false, data: action.payload.data }
+
+        case GET_POST_PENDING:
+            return { ...state, loading: true }
+        case GET_POST_FULFILLED:
+            return { ...state, loading: false, selected: action.payload.data }
+        default:
+            return state;
+    }
+}
+
+export function getPosts() {
+    return {
+        type: GET_POSTS,
+        payload: axios.get('/api/posts')
+    }
+}
+
+export function getPost(id) {
+    return {
+        type: GET_POST,
+        payload: axios.get(`/api/posts/${id}`)
     }
 }

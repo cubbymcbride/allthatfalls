@@ -1,50 +1,33 @@
-import axios from 'axios'
-
-const GET_ADMIN = 'GET_ADMIN'
-const GET_ADMIN_FULFILLED = 'GET_ADMIN_FULFILLED'
-
-const LOGIN_ADMIN = 'LOGIN_ADMIN'
-const LOGIN_ADMIN_FULFILLED = 'LOGIN_ADMIN_FULFILLED'
-
-const LOGOUT_ADMIN = 'LOGOUT_ADMIN'
-const LOGOUT_ADMIN_FULFILLED = 'LOGOUT_ADMIN_FULFILLED'
-
 const initialState = {
-    data: null
-}
-
-export default function(state = initialState, action) {
+    email: '',
+    password: '',
+    id: 0
+  };
+  
+  const UPDATE_ADMIN = "UPDATE_ADMIN";
+  const CLEAR_ADMIN = "CLEAR_ADMIN";
+  
+  export function updateAdmin(admin) {
+    return {
+      type: UPDATE_ADMIN,
+      payload: admin
+    };
+  }
+  
+  export function clearAdmin() {
+    return {
+      type: CLEAR_ADMIN
+    };
+  }
+  
+  export default function authReducer(state = initialState, action) {
     switch (action.type) {
-        case GET_ADMIN_FULFILLED:
-           return { ...state, data: action.payload.data } 
-
-        case LOGIN_ADMIN_FULFILLED:
-            return { ...state, data: action.payload.data }
-
-        case LOGOUT_ADMIN_FULFILLED:
-                return { ...state, data: null }
-        default:
-            return state
+      case UPDATE_ADMIN:
+        const { email, user_id } = action.payload;
+        return { ...state, email, id: user_id  };
+      case CLEAR_ADMIN:
+        return { ...state, ...initialState };
+      default:
+        return state;
     }
-}
-
-export function getADMIN() {
-    return {
-        type: GET_ADMIN,
-        payload: axios.get('/auth/currentAdmin')
-    }
-}
-
-export function login(loginInfo) {
-    return {
-        type: LOGIN_ADMIN,
-        payload: axios.post('/auth/login', loginInfo)
-    }
-}
-
-export function logout() {
-    return {
-        type: LOGOUT_ADMIN,
-        payload: axios.get('/auth/logout')
-    }
-}
+  }

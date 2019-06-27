@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="App">
       <Nav></Nav>
-      <h1>Something Dope Is Forming</h1>
       {routes}
     </div>
   );

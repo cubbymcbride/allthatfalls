@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import blackT from '../../images/ATFLogoBlackTransparent.png'
-
+import './band.css'
 
 export default class Band extends Component {
   render () {
-    return <div style={styles.bg} >
+    return <div style={styles.bg} className='background' >
       Murrrrrrrr! {this.props.name}
     </div>
   }

@@ -3,10 +3,10 @@ const bcrypt = require('bcryptjs')
 module.exports = {
     register: async (req, res) => {
         try {
-            const db = req.app.get('db')
-        const { name, email, password } = req.body
+        const db = req.app.get('db')
+        const { email, password } = req.body
 
-        let admins = await db.findAdminByEmail(email)
+        let admins = await db.auth.findAdminByEmail(email)
         let admin = admins[0]
 
         if (admin) {
@@ -16,11 +16,10 @@ module.exports = {
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
 
-       let response = await db.createAdmin(name, email, hash)
+       let response = await db.auth.createAdmin({email, password: hash})
+       
        let newadmin = response[0]
-
        delete newadmin.password
-
        req.session.admin = newadmin
        res.send(req.session.admin)
             
@@ -33,9 +32,10 @@ module.exports = {
     login: async (req, res) => {
         try {
             const db = req.app.get('db')
-        const { email, password } = req.body
+        const { email, password, } = req.body
+        const { session } = req;
 
-        let admins = await db.findAdminByEmail(email)
+        let admins = await db.auth.findAdminByEmail(email)
         let admin = admins[0]
 
         if (!admin) {
@@ -43,10 +43,14 @@ module.exports = {
         }
 
         let isAuthenticated = bcrypt.compareSync(password, admin.password)
+       
 
-        if (!isAuthenticated) {
+        if (isAuthenticated) {
+            delete admin.password;
+            session.admin = admin
+            res.status(200).send(session.admin)} else {
             return res.status(401).send('email or password incorrect')
-        }
+        } 
 
         delete admin.password
         req.session.admin = admin
