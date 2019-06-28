@@ -23,11 +23,12 @@ class Login extends Component {
     }
 
     async login() {
-        const { email, password, } = this.state;
+        const { email, password } = this.state;
         console.log('from login component', this.state)
         await axios
-          .post("/auth/login", { email, password,  })
+          .post("/auth/login", { email, password })
           .then(res => {
+            console.log('res.data', res.data)
             this.props.updateAdmin(res.data);
           })
           .then(res => {
@@ -65,6 +66,7 @@ class Login extends Component {
       }
 
     render() {
+      console.log(this.props)
         return (
             <div style={styles.bg} className='background'>
                 <p1 style={styles.font}>Email</p1>
@@ -92,8 +94,21 @@ class Login extends Component {
     }
 }
 
-export default connect(null, { updateAdmin })(Login)
+function mapStateToProps(state){
+    return {
+      email: state.admin.email,
+      user_id: state.admin.user_id
+    }
+}
 
+export default connect( mapStateToProps, { updateAdmin })(Login)
+
+
+
+
+
+
+// css in js
 let styles = {
   bg: {
     backgroundColor: '#696969',

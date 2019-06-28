@@ -32,7 +32,7 @@ module.exports = {
     login: async (req, res) => {
         try {
             const db = req.app.get('db')
-        const { email, password, } = req.body
+        const { email, password } = req.body
         const { session } = req;
 
         let admins = await db.auth.findAdminByEmail(email)
@@ -54,7 +54,7 @@ module.exports = {
 
         delete admin.password
         req.session.admin = admin
-        res.send(req.session.admin)
+        // res.send(req.session.admin)
 
         } catch (error) {
             console.log('there was an error', error)

@@ -1,6 +1,12 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
 import promiseMiddleware from 'redux-promise-middleware'
 
-import reducer from './reducers'
+import admin from './reducers/admin'
+import posts from './reducers/post'
 
-export default createStore( reducer, applyMiddleware(promiseMiddleware))
+const store = createStore(
+    combineReducers({ admin, posts}),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    );
+
+export default store
