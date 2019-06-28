@@ -38,6 +38,7 @@ let styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    border: '3px solid #696969'
   },
   word: {
     textDecoration: "none",

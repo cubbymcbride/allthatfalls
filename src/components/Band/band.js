@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import blackT from '../../images/ATFLogoBlackTransparent.png'
 import './band.css'
 
 export default class Band extends Component {
@@ -8,28 +7,33 @@ export default class Band extends Component {
     <div style={styles.bg} className='background'>
     <h1 style={styles.words}>All That Falls is:</h1>
     <div style={styles.card}>
-      <h1>Bryant Wilson</h1>
-      <h2>Lead Vocals + Rhythm Guitar</h2>
+      <h1 style={styles.spacing}>Bryant Wilson</h1>
+      <h2 style={styles.spacing}>Lead Vocals + Rhythm Guitar</h2>
+    </div>
+    
+    <div style={styles.card}>
+      <h1 style={styles.spacing}>Jacob "Chuck" McBride</h1>
+      <h2 style={styles.spacing}>Lead Guitar + Backing Vocals</h2>
     </div>
 
     <div style={styles.card}>
-      <h1>Jacob "Chuck" McBride</h1>
-      <h2>Lead Guitar + Backing Vocals</h2>
+      <h1 style={styles.spacing}>Enrique "Ricky" Avila</h1>
+      <h2 style={styles.spacing}>Drums + Backing Vocals</h2>
     </div>
 
     <div style={styles.card}>
-      <h1>Enrique "Ricky" Avila</h1>
-      <h2>Drums + Backing Vocals</h2>
-    </div>
-
-    <div style={styles.card}>
-      <h1>Caleb "Cubby" McBride</h1>
-      <h2>Bass Guitar + Dirty Vocals</h2>
+      <h1 style={styles.spacing}>Caleb "Cubby" McBride</h1>
+      <h2 style={styles.spacing}>Bass Guitar + Dirty Vocals</h2>
 
     </div>
-
+      <footer style={styles.footer}> Copyright All That Falls © 2019
+      <br/>
+      Website designed by Caleb McBride
+      </footer>
     </div>
+    
     </div>
+    
   }
 }
 
@@ -45,14 +49,32 @@ let styles = {
   },
   card: {
     backgroundColor: '#000000',
-    height: '700px',
+    height: '400px',
     width: '750px',
     marginTop: '20px',
+    marginBottom: '20px',
     fontFamily: 'Permanent Marker, cursive',
-    color: 'white'
+    color: 'white',
+    border: '5px solid #696969',
+    borderStyle: 'inset'
   },
 
   words: {
     fontFamily: 'Permanent Marker, cursive'
+  },
+
+  spacing: {
+    padding: 0,
+    margin: 0
+  },
+
+  footer: {
+    width: '100vw',
+    height: '50px',
+    position: 'absolute',
+    left: 0,
+    bottom: 0,
+    backgroundColor: 'Black',
+    color: 'white',
   }
 }

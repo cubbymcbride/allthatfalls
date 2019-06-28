@@ -93,6 +93,10 @@ class Login extends Component {
                 <br/>
                 <button style={styles.button} onClick={() => this.register()} >Register</button>
                 </div>
+      <footer style={styles.footer}> Copyright All That Falls © 2019
+      <br/>
+      Website designed by Caleb McBride
+      </footer>
             </div>
           
         )
@@ -152,5 +156,15 @@ let styles = {
     backgroundColor: '#696969',
     border: '5px solid black',
     borderRadius: '25px'
+  },
+
+  footer: {
+    width: '100vw',
+    height: '50px',
+    position: 'absolute',
+    left: 0,
+    bottom: 0,
+    backgroundColor: 'Black',
+    color: 'white',
   }
 }
