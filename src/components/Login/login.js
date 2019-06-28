@@ -111,7 +111,7 @@ export default connect( mapStateToProps, { updateAdmin })(Login)
 // css in js
 let styles = {
   bg: {
-    backgroundColor: '#696969',
+    backgroundColor: '#ffffff',
     height: '100vh',
     width: '100vw'
   },

@@ -9,9 +9,9 @@ const GET_POST_FULFILLED = 'GET_POST_FULFILLED'
 const GET_POST_PENDING = 'GET_POST_PENDING'
 
 let initialState = {
-    data: [],
-    loading: false,
-    selected: null
+    title: '',
+    content: '',
+    img: ''
 }
 
 export default function(state = initialState, action) {

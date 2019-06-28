@@ -12,7 +12,7 @@ export default class Gear extends Component {
 
 let styles = {
   bg: {
-    backgroundColor: '#696969',
+    backgroundColor: '#ffffff',
     height: '100vh',
     width: '100vw'
 

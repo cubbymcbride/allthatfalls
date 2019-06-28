@@ -32,7 +32,7 @@ export default connect(mapStateToProps)(Home)
 
 let styles = {
   bg: {
-    backgroundColor: '#696969',
+    backgroundColor: '#ffffff',
     height: '100vh',
     width: '100vw',
   }
