@@ -69,6 +69,8 @@ class Login extends Component {
       console.log(this.props)
         return (
             <div style={styles.bg} className='background'>
+              <div style={styles.loginBox}>
+                <h2 style={styles.font}>Admin Login</h2>
                 <p1 style={styles.font}>Email</p1>
                 <br/>
                 <input style={styles.border}
@@ -88,8 +90,11 @@ class Login extends Component {
                 <br/>
                 <button style={styles.button} onClick={() => this.login()}>Login</button>
                 <br/>
+                <br/>
                 <button style={styles.button} onClick={() => this.register()} >Register</button>
+                </div>
             </div>
+          
         )
     }
 }
@@ -133,5 +138,19 @@ let styles = {
   border: {
   border: '3px solid black',
   borderRadius: '4px'
+  },
+
+  loginBox: {
+    height: '400px',
+    width: '400px',
+    paddingTop: '20px',
+    marginTop: '40px',
+    flexDirection: 'column',
+    display: 'inline-block',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#696969',
+    border: '5px solid black',
+    borderRadius: '25px'
   }
 }
