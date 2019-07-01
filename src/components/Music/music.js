@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import blackT from '../../images/ATFLogoBlackTransparent.png'
+import ReactPlayer from 'react-player'
 import './music.css'
+import AWS from 'aws-sdk'
+
 
 
 export default class Music extends Component {
@@ -10,8 +12,23 @@ export default class Music extends Component {
       <div>
 
         <div style={styles.card}>
-
+            Call Us Failures
+            <br/>
+            All That Falls © 2018
+            <br/>
+            Released July 12th, 2018
+            <ReactPlayer url='' playing/>
+            <ReactPlayer url='' playing/>
+            <ReactPlayer url='' playing/>
+            <ReactPlayer url='' playing/>
+            <ReactPlayer url='' playing/>
+            <ReactPlayer url='' playing/>
+            <ReactPlayer url='' playing/>
+            <ReactPlayer url='' playing/>
+            <ReactPlayer url='' playing/>
+            <ReactPlayer url='' playing/>
         </div>
+        
       </div>
       <footer style={styles.footer}> Copyright All That Falls © 2019
       <br/>

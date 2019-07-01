@@ -9,21 +9,25 @@ export default class Band extends Component {
     <div style={styles.card}>
       <h1 style={styles.spacing}>Bryant Wilson</h1>
       <h2 style={styles.spacing}>Lead Vocals + Rhythm Guitar</h2>
+      <img src='https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/Photos/Bryant.jpg' style={styles.photo} />
     </div>
     
     <div style={styles.card}>
       <h1 style={styles.spacing}>Jacob "Chuck" McBride</h1>
       <h2 style={styles.spacing}>Lead Guitar + Backing Vocals</h2>
+      <img src='https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/Photos/Chuck.jpg' style={styles.photo} />
     </div>
 
     <div style={styles.card}>
       <h1 style={styles.spacing}>Enrique "Ricky" Avila</h1>
       <h2 style={styles.spacing}>Drums + Backing Vocals</h2>
+      <img src='https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/Photos/Rick.jpg' style={styles.photo} />
     </div>
 
     <div style={styles.card}>
       <h1 style={styles.spacing}>Caleb "Cubby" McBride</h1>
       <h2 style={styles.spacing}>Bass Guitar + Dirty Vocals</h2>
+      <img src='https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/Photos/cub.jpg' style={styles.photo} />
 
     </div>
       <footer style={styles.footer}> Copyright All That Falls © 2019
@@ -40,7 +44,7 @@ export default class Band extends Component {
 let styles = {
   bg: {
     backgroundColor: '#ffffff',
-    height: '250vh',
+    height: '350vh',
     width: '100vw',
     flexDirection: 'column',
     display: 'flex',
@@ -49,7 +53,7 @@ let styles = {
   },
   card: {
     backgroundColor: '#000000',
-    height: '400px',
+    height: '700px',
     width: '750px',
     marginTop: '20px',
     marginBottom: '20px',
@@ -76,5 +80,10 @@ let styles = {
     bottom: 0,
     backgroundColor: 'Black',
     color: 'white',
+  },
+  photo: {
+    width: '250px',
+    height: '350px',
+    border: '5px inset #696969',
   }
 }

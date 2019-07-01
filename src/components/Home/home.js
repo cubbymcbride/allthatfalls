@@ -2,28 +2,21 @@ import React from 'react'
 import { connect } from 'react-redux'
 import './home.css'
 import Posts from '../Posts/posts'
-import blackT from '../../images/ATFLogoBlackTransparent.png'
 
 
 
 function Home(props) {
     let { post } = props
     return (
-        <div style={styles.bg} className='background'>
-            {post && <div>
-                <h1>{post.title}</h1>
-                <p>{post.author}</p>
-                <hr/>
-                <p>{post.content}</p>
-                
-            </div>}
-
+      <div>
+      <div style={styles.bg} className='background'>
+      <div style={styles.card}></div>
       <footer style={styles.footer}> Copyright All That Falls © 2019
       <br/>
       Website designed by Caleb McBride
-      </footer>
-              
-        </div>
+      </footer>  
+        </div>      
+      </div>
     )
   }
 
@@ -40,6 +33,10 @@ let styles = {
     backgroundColor: '#ffffff',
     height: '100vh',
     width: '100vw',
+    flexDirection: 'column',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
 
   footer: {
@@ -50,5 +47,16 @@ let styles = {
     bottom: 0,
     backgroundColor: 'Black',
     color: 'white',
-  }
+  },
+  card: {
+    backgroundColor: '#000000',
+    height: '400px',
+    width: '750px',
+    marginTop: '20px',
+    marginBottom: '20px',
+    fontFamily: 'Permanent Marker, cursive',
+    color: 'white',
+    border: '5px solid #696969',
+    borderStyle: 'inset'
+  },
 }

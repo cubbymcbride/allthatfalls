@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import blackT from '../../images/ATFLogoBlackTransparent.png'
 import './gear.css'
 
 export default class Gear extends Component {
@@ -8,10 +7,30 @@ export default class Gear extends Component {
       <h1 style={styles.words}>All That Falls uses:</h1>
       <div>
       <div style={styles.wrapper}>
-        <div style={styles.card}></div>
-        <div style={styles.card}></div>
-        <div style={styles.card}></div>
-        <div style={styles.card}></div>
+        <div style={styles.card}>
+        <h2>Bryant</h2>
+        <h3>Guitars:</h3>
+        <h3>Pedals:</h3>
+        <h3>Amp:</h3>
+        </div>
+        <div style={styles.card}>
+        <h2>Chuck</h2>
+        <h3>Guitars:</h3>
+        <h3>Pedals:</h3>
+        <h3>Amp:</h3>
+        </div>
+        <div style={styles.card}>
+        <h2>Ricky</h2>
+        <h3>Drums:</h3>
+        <h3>Cymbals:</h3>
+        <h3>Hardware:</h3>
+        </div>
+        <div style={styles.card}>
+        <h2>Cub</h2>
+        <h3>Basses:</h3>
+        <h3>Pedals:</h3>
+        <h3>Amp:</h3>
+        </div>
       </div>
         <footer style={styles.footer}> Copyright All That Falls © 2019
       <br/>
