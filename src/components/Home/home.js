@@ -5,13 +5,14 @@ import Posts from '../Posts/posts'
 
 
 
-function Home(props) {
-    let { post } = props
+function Home() {
     return (
       <div>
       <div style={styles.bg} className='background'>
-      <div style={styles.card}></div>
-      <footer style={styles.footer}> Copyright All That Falls © 2019
+      <div style={styles.card}>
+        <Posts/>
+      </div>
+      <footer style={styles.footer}> Copyright All That Falls © 201
       <br/>
       Website designed by Caleb McBride
       </footer>  
@@ -20,13 +21,7 @@ function Home(props) {
     )
   }
 
-let mapStateToProps = state => {
-  let { selected: post } = state.posts
-  console.log(1111111, state)
-  return { post }
-}
-
-export default connect(mapStateToProps)(Home)
+export default Home
 
 let styles = {
   bg: {

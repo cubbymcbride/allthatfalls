@@ -24,23 +24,23 @@ module.exports = {
     },
 
     create: async (req, res) => {
-        try {
+        
+            console.log(11111111, req.body)
             let db = req.app.get('db')
-            let { title, content } = req.body
+            // let { title, content } = req.body
 
-            if (!req.session.user) {
-                return res.status(401).send('user not authenticated')
-            }
+            // if (!req.session.user) 
+            // console.log(111111, req.session.user)
+            //     return res.status(401).send('user not authenticated')
+            
 
-            let { id: user_id } = req.session.user
+            // let { id: user_id } = req.session.user
             // let user_id = req.session.user.id
-            let newPost = { user_id, title, content }
-            let posts = await db.post.createPost(newPost)
-            res.send(posts)
-        } catch (error) {
-            console.log('error creating post:', error)
-            res.status(500).send(error)
-        }
+            await db.post.createPost(req.body).then(() => res.sendStatus(200))
+            
+        
+            
+        
     },
 
     deletePost: (req, res) => {
