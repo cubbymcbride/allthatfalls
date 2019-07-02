@@ -30,7 +30,7 @@ app.use(
 
 app.post('/auth/register', AuthCtrl.register)
 app.post('/auth/login', AuthCtrl.login)
-app.get('/auth/logout', AuthCtrl.logout)
+app.post('/auth/logout', AuthCtrl.logout)
 app.get('/auth/currentAdmin', AuthCtrl.currentAdmin)
 
 app.get('/api/post', PostCtrl.read)

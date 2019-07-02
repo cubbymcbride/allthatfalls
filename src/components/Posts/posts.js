@@ -22,6 +22,10 @@ class Posts extends Component {
         })
     }
 
+    // componentDidUpdate(){
+    //     this.setState
+    // }
+
     handleInput = e => {
         this.setState({
             [e.target.name]: e.target.value
@@ -59,7 +63,7 @@ class Posts extends Component {
                 placeholder='Image Url'
                 name='img'
                 onChange={this.handleInput}
-                value={this.state.name}></input>
+                value={this.state.img}></input>
                 <br/>
                 <button onClick={() => this.submit()}>Post</button>
             </div>

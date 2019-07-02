@@ -1,13 +1,25 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import axios from 'axios'
 import whiteT from '../../images/ATFWhiteTransparent.png'
 
-export default class Nav extends Component {
+
+
+class Nav extends Component {
+
+  logout = () => {
+    axios.post('/auth/logout').then(
+      () => {
+      // console.log('logout')
+      this.props.history.push('/login')}
+    )
+  }
+
   render () {
     return (
       <div>
       <nav style={styles.navbar}>
-        <img style={styles.logo} src={whiteT}/>
+        <img style={styles.logo} src={whiteT} onClick={this.logout}/>
         <div>
         <Link style={styles.word} to="/">Home</Link>
         <Link style={styles.word} to="/band">Band</Link>
@@ -20,6 +32,8 @@ export default class Nav extends Component {
     ) 
   }
 }
+
+export default withRouter(Nav)
 
 let styles = {
   logo: {
