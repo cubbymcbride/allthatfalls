@@ -97,7 +97,8 @@ let styles = {
     color: 'white',
     border: '5px solid #696969',
     borderStyle: 'inset',
-    alignItems: "center"
+    alignItems: "center",
+    backgroundImage: 'linear-gradient(to bottom right, #000000, #696969)'
   },
   words: {
     fontFamily: 'Permanent Marker, cursive',

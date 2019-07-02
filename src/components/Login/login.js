@@ -155,7 +155,8 @@ let styles = {
     alignItems: 'center',
     backgroundColor: '#696969',
     border: '5px solid black',
-    borderRadius: '25px'
+    borderRadius: '25px',
+    backgroundImage: 'linear-gradient(to bottom right, #000000, #696969)'
   },
 
   footer: {

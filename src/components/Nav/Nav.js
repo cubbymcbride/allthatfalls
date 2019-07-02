@@ -52,7 +52,8 @@ let styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    border: '3px solid #696969'
+    border: '3px solid #696969',
+    backgroundImage: 'linear-gradient(to bottom right, #000000, #696969)'
   },
   word: {
     textDecoration: "none",

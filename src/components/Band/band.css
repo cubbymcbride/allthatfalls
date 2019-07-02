@@ -4,6 +4,7 @@
 
 .background {
     background-image: url('../../images/ATFLogoBlackTransparent.png');
-    position: absolute
+    position: absolute;
+    z-index: 1;
 }
 

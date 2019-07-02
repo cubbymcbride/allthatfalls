@@ -44,7 +44,7 @@ export default class Band extends Component {
 let styles = {
   bg: {
     backgroundColor: '#ffffff',
-    height: '350vh',
+    height: '500vh',
     width: '100vw',
     flexDirection: 'column',
     display: 'flex',
@@ -60,11 +60,14 @@ let styles = {
     fontFamily: 'Permanent Marker, cursive',
     color: 'white',
     border: '5px solid #696969',
-    borderStyle: 'inset'
+    borderStyle: 'inset',
+    backgroundImage: 'linear-gradient(to bottom right, #000000, #696969)'
   },
 
   words: {
-    fontFamily: 'Permanent Marker, cursive'
+    fontFamily: 'Permanent Marker, cursive',
+    padding: 0,
+    margin: 0
   },
 
   spacing: {
