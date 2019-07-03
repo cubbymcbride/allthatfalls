@@ -11,6 +11,7 @@ export default class Music extends Component {
 
         <div style={styles.card}>
             <h2>Call Us Failures</h2>
+            <img src={'https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/Photos/CUF+Cover.jpg'} style={styles.pic}/>
             <h3>1. Walking To California</h3>
             <h4 style={styles.spacing}>Key Lyric</h4>
             <h2 style={styles.spacing}>"In my case California, I'll get there on my own"</h2>
@@ -69,7 +70,7 @@ export default class Music extends Component {
 let styles = {
   bg: {
     backgroundColor: '#ffffff',
-    height: '400vh',
+    height: '450vh',
     width: '100vw',
     flexDirection: 'column',
     display: 'flex',
@@ -89,7 +90,7 @@ let styles = {
   },
   card: {
     backgroundColor: '#000000',
-    height: '355vh',
+    height: '405vh',
     width: '775px',
     marginTop: '20px',
     marginBottom: '20px',
@@ -107,6 +108,11 @@ let styles = {
   spacing: {
     margin: 0,
     padding: 0
+  },
+
+  pic: {
+    height: '300px',
+    width: '300px'
   }
   
 }

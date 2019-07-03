@@ -40,15 +40,16 @@ class Login extends Component {
      
         this.setState({
             email: '',
-            password: ''
+            password: '',
+            username: ''
         });
       }
 
       async register() {
-        const { email, password } = this.state;
+        const { email, password, username } = this.state;
         console.log('from login component', this.state)
         await axios
-          .post("/auth/register", { email, password })
+          .post("/auth/register", { email, password, username })
           .then(res => {
             this.props.updateAdmin(res.data);
           })
@@ -62,6 +63,7 @@ class Login extends Component {
         this.setState({
             email: '',
             password: '',
+            username: ''
          });
       }
 
@@ -77,6 +79,14 @@ class Login extends Component {
                     name="email" 
                     type="text" 
                     placeholder="Email" 
+                    onChange={this.handleChange}/>
+                    <br/>
+                    <p1 style={styles.font}>Username</p1>
+                    <br/>
+                    <input style={styles.border}
+                    name="username" 
+                    type="text" 
+                    placeholder="Username" 
                     onChange={this.handleChange}/>
                     <br/>
                 <p1 style={styles.font}>Password</p1>
@@ -145,7 +155,7 @@ let styles = {
   },
 
   loginBox: {
-    height: '400px',
+    height: '420px',
     width: '400px',
     paddingTop: '20px',
     marginTop: '40px',

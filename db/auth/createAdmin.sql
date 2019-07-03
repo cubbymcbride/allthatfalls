@@ -1,3 +1,3 @@
-insert into admins (password, email) 
-VALUES ( ${password}, ${email} )
+insert into admins (password, email, username) 
+VALUES ( ${password}, ${email}, ${username} )
 RETURNING *;
