@@ -1,20 +1,29 @@
 module.exports = {
     read: async (req, res) => {
-        try {
-            let db = req.app.get('db')
-            let posts = await db.getPosts()
-            res.send(posts)
-        } catch (error) {
-            console.log('error fetching posts:', error)
-            res.status(500).send(error) 
-        }
+        // try {
+        //     let db = req.app.get('db')
+        //     let posts = await db.post.getPosts()
+        //     res.send(posts)
+        // } catch (error) {
+        //     console.log('error fetching posts:', error)
+        //     res.status(500).send(error) 
+        // }
+        // this grabs data from the "db" established in index.js file
+        let db = req.app.get('db')
+        console.log('read part of comment controller', req.params)
+        // this works because inside the db folder we have the nationalParks.db file
+        db.post.getPosts().then((response) => {
+            console.log(response)
+            res.send(response)
+        })
+
     },
 
     getPost: async (req, res) => {
         try {
             let db = req.app.get('db')
             let { id } = req.params 
-            let posts = await db.post.getPost(id)
+            let posts = await db.post.getPosts
             let post = posts[0]
             res.send(post)
         } catch (error) {

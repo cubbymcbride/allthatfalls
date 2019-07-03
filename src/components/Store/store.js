@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import blackT from '../../images/ATFLogoBlackTransparent.png'
 import './store.css'
 
 export default class Store extends Component {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import './home.css'
+import Post from '../Post/post'
 import Posts from '../Posts/posts'
 
 
@@ -11,6 +12,7 @@ function Home() {
       <div style={styles.bg} className='background'>
       <div style={styles.card}>
         <Posts/>
+        <Post/>
       </div>
       <footer style={styles.footer}> Copyright All That Falls © 2019
       <br/>

@@ -1,84 +1,47 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
+import Post from '../Post/post'
 
-class Posts extends Component {
-    constructor(){
+export default class Posts extends Component {
+    constructor() {
         super();
 
         this.state = {
-            user_id: '',
-            title: '',
-            content: '',
-            img: ''   
+            posts: []
         }
-
     }
 
-    componentDidMount(){
-        this.setState({
-            user_id: this.props.user_id,
-
+    async componentDidMount(){
+     await   axios.get('/api/post').then(res => {
+            this.setState({
+                posts: res.data
+            })
+            console.log(33333, res.data, this.state)
+        }).catch(err => {
+            console.log('error fetching posts from endpoint', err)
         })
     }
 
-    // componentDidUpdate(){
-    //     this.setState
-    // }
-
-    handleInput = e => {
-        this.setState({
-            [e.target.name]: e.target.value
+    deletePost = id => {
+        axios.delete(`/api/posts/${id}`).then(res => {
+            this.setState({
+                posts: res.data
+            })
+        }).catch(err => {
+            console.log('Did not delete error:', err)
         })
     }
 
-    submit() {
-        const {title, content, img, user_id} = this.state
-        axios.post("/api/post", {title, content, img, user_id})
-        .then(res => {
-            console.log('you did it dumbass', res.data)
-        })
-    }
+    
 
-    render (){
-        console.log(111111, this.props, this.state)
-        return(
+    render(){
+        return (
             <div>
-                <input
-                type='text'
-                placeholder='Title'
-                name='title'
-                onChange={this.handleInput}
-                value={this.state.name}></input>
-                <br/>
-                <input
-                type='text'
-                placeholder='Content'
-                name='content'
-                onChange={this.handleInput}
-                value={this.state.name}></input>
-                <br/>
-                <input
-                type='text'
-                placeholder='Image Url'
-                name='img'
-                onChange={this.handleInput}
-                value={this.state.img}></input>
-                <br/>
-                <button onClick={() => this.submit()}>Post</button>
+
+               
+
             </div>
-
-        )     
+        )
     }
 }
-
-function mapStateToProps(state){
-    return{
-        user_id: state.admin.user_id
-    }
-}
-
-export default connect(
-    mapStateToProps
-
-)(Posts)
