@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import Post from '../Post/post'
 
 export default class Posts extends Component {
     constructor() {
@@ -38,10 +37,39 @@ export default class Posts extends Component {
     render(){
         return (
             <div>
-
-               
-
+                {this.state.posts.map((post)=> { 
+                    return (
+                    <div style={styles.border}>
+                        <div key={post.id}>
+                          <h2 style={styles.spacing}>{post.title}</h2>
+                        <p style={styles.spacing}>{post.content}</p>  
+                          <br/>  
+                         <img src={post.img} style={styles.pic}/>
+                        </div>
+                    </div>
+                )
+                
+                })}
             </div>
+
+            
         )
     }
+}
+
+
+let styles = {
+    border: {
+        border: '5px inset white',
+        margin: '10px'
+    },
+    pic: {
+        height:'300px',
+        width: '300px',
+        border: '5px inset white'
+    },
+    spacing: {
+        padding: 0,
+        margin: 0
+      },
 }

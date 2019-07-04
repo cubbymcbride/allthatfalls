@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
 
-class Posts extends Component {
+class Post extends Component {
     constructor(){
         super();
 
@@ -77,4 +77,4 @@ function mapStateToProps(state){
 export default connect(
     mapStateToProps
 
-)(Posts)
+)(Post)

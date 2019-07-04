@@ -10,6 +10,7 @@ function Home() {
     return (
       <div>
       <div style={styles.bg} className='background'>
+      <h1 style={styles.words}>ATF FEED</h1>
       <div style={styles.card}>
         <Posts/>
         <Post/>
@@ -28,7 +29,7 @@ export default Home
 let styles = {
   bg: {
     backgroundColor: '#ffffff',
-    height: '100vh',
+    height: '720vh',
     width: '100vw',
     flexDirection: 'column',
     display: 'flex',
@@ -47,7 +48,7 @@ let styles = {
   },
   card: {
     backgroundColor: '#000000',
-    height: '400px',
+    height: '675vh',
     width: '750px',
     marginTop: '20px',
     marginBottom: '20px',
@@ -55,5 +56,8 @@ let styles = {
     color: 'white',
     border: '5px solid #696969',
     borderStyle: 'inset'
+  },
+  words: {
+    fontFamily: 'Permanent Marker, cursive'
   },
 }
