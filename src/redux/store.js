@@ -1,5 +1,4 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux'
-import promiseMiddleware from 'redux-promise-middleware'
+import { createStore, combineReducers } from 'redux'
 
 import admin from './reducers/admin'
 import posts from './reducers/post'

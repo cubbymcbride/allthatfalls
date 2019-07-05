@@ -6,6 +6,7 @@ import Home from './components/Home/home'
 import Music from './components/Music/music'
 import Store from './components/Store/store'
 import Login from './components/Login/login'
+import UpdatePost from "./components/UpdatePost/updatePost";
 
 export default (
     <Switch>
@@ -15,5 +16,6 @@ export default (
     <Route exact path="/music" component={Music} />
     <Route exact path="/store" component={Store} />
     <Route exact path="/login" component={Login} />
+    <Route exact path="/update" component={UpdatePost} />
     </Switch>
 )

@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import axios from 'axios'
 
-class Post extends Component {
+export default class UpdatePost extends Component {
     constructor(){
         super();
 
@@ -15,34 +13,19 @@ class Post extends Component {
 
     }
 
-    componentDidMount(){
-        this.setState({
-            user_id: this.props.user_id,
-            title: this.props.title,
-            content: this.props.content,
-            img: this.props.img
-        })
-    }
-
     handleInput = e => {
         this.setState({
             [e.target.name]: e.target.value
         })
     }
 
-    submit() {
-        const {title, content, img, user_id} = this.state
-        axios.post("/api/post", {title, content, img, user_id})
-        .then(res => {
-            console.log('you did it dumbass', res.data)
-        })
+    handleClick = () => {
+        let updatedPost = {...this.props.post, ...this.state}
+        this.props.updatePost(updatedPost)
+        this.props.toggleEdit()
     }
 
-  
-
-
     render (){
-        console.log(22222222222, this.props, this.state)
         return(
             <div>
                 <input style={styles.border}
@@ -66,40 +49,30 @@ class Post extends Component {
                 onChange={this.handleInput}
                 value={this.state.img}></input>
                 <br/>
-                <button style={styles.button} onClick={() => this.submit()}>Post</button>
+                <button style={styles.button} onClick={() => this.handleClick()}>Save</button>
             </div>
 
         )     
     }
 }
 
-function mapStateToProps(state){
-    return{
-        user_id: state.admin.user_id
-    }
-}
-
-export default connect(
-    mapStateToProps
-
-)(Post)
 
 let styles = {
-  border: {
-  border: '3px solid white',
-  borderRadius: '4px',
-  margin: '4px'
-  },
-  button: {
-  backgroundColor: 'black',
-  border: 'none',
-  color: 'white',
-  padding: '15px 15px',
-  textAlign: 'center',
-  textDecoration: 'none',
-  display: 'inline-block',
-  fontSize: '20px',
-  fontFamily: 'Permanent Marker, cursive',
-  borderRadius: '15px'
-  },
-}
+    border: {
+    border: '3px solid white',
+    borderRadius: '4px',
+    margin: '4px'
+    },
+    button: {
+    backgroundColor: 'black',
+    border: 'none',
+    color: 'white',
+    padding: '15px 15px',
+    textAlign: 'center',
+    textDecoration: 'none',
+    display: 'inline-block',
+    fontSize: '20px',
+    fontFamily: 'Permanent Marker, cursive',
+    borderRadius: '15px'
+    },
+  }
