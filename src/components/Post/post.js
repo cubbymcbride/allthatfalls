@@ -42,7 +42,6 @@ class Post extends Component {
 
 
     render (){
-        console.log(22222222222, this.props, this.state)
         return(
             <div>
                 <input style={styles.border}

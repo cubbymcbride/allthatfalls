@@ -3,6 +3,8 @@ import axios from 'axios'
 import Post from '../Post/post'
 import {Link} from 'react-router-dom'
 import UpdatePost from '../UpdatePost/updatePost'
+import PostsModal from '../Posts/postsModal'
+import { ButtonToolbar } from 'react-bootstrap';
 
 export default class Posts extends Component {
     constructor() {
@@ -13,7 +15,8 @@ export default class Posts extends Component {
             title: '',
             content: '',
             img: '' ,
-
+            toggle: false,
+            update: false
         }
     }
 
@@ -30,7 +33,7 @@ export default class Posts extends Component {
 
     toggleEdit = () => {
         this.setState({
-            // posts: this.state.posts
+            toggle: !this.state.toggle
         })
     }
 
@@ -44,27 +47,27 @@ export default class Posts extends Component {
         })
     }
 
-    editPost = () => {
-        axios.put(`/api/post/${this.props.match.params.id}`, {
-            title: this.state.title,
-            content: this.state.content,
-            img: this.state.img
-        }).then(res => {
-            alert('Edit Success')
-        }).catch(err => {
-            alert('Edit Failure')
-            console.log('Problem editing post Error:', err)
-        })
-    }
 
     render(){
-        console.log(5555555, this.state.posts)
+        let flipUpdate = () => {
+            // console.log('flip update invoked', this.state)
+            this.setState({
+              update: !this.state.update
+            })};
+       
+          let addModalClose = () => this.setState({addModalShow: false})
+          let postFinished = () =>
+          {
+            this.setState({addModalShow: false})
+            this.props.history.push("/");
+          }
         return (
             <div>
                 {this.state.posts.map((post)=> {
                     return ( 
+                    <ButtonToolbar>
                     <div>
-                    <div style={styles.border} key={post.post_id}>
+                    {<div style={styles.border} key={post.post_id}>
                         <div>
                           <h2 style={styles.spacing}>{post.title}</h2>
                         <p style={styles.spacing}>{post.content}</p>  
@@ -73,21 +76,24 @@ export default class Posts extends Component {
                         </div>
                         {/* <UpdatePost
                         toggleEdit={this.toggleEdit}
-                        editPost={this.props.editPost} />
-                        */}
+                        editPost={this.props.editPost} /> */}
                        
-                        {this.state.posts ?
-                        // <button style={styles.button} onClick={() => {<UpdatePost/>}}>Edit</button>
-                        <Link to="/update">Edit</Link>
-                        :
+                       
+                        
+                        
+                        <button  style={styles.btn} onClick={() => this.setState({addModalShow: true})}>edit</button>
+
+                        <PostsModal className="openmodal"
+           show={this.state.addModalShow} onHide={addModalClose} logFinished={postFinished} userId={post.user_id} title={post.title} content={post.content} img={post.img} flipUpdate={flipUpdate} postId={post.post_id}/>
+                        
                         <button style={styles.button} onClick={this.toggleEdit}>Cancel</button>
-                        }
+                        
                         
                         <button style={styles.button} onClick={() => this.deletePost(post.post_id)}>Delete</button> 
 
-                    </div>
+                    </div>}
                         <Post posts={this.state.posts}/>
-                    </div>
+                    </div></ButtonToolbar>
                 )
                 
                 })}

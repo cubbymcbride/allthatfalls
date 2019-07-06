@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 export default class UpdatePost extends Component {
     constructor(){
@@ -9,8 +10,19 @@ export default class UpdatePost extends Component {
             title: '',
             content: '',
             img: '' ,
+            postId: ''
         }
 
+    }
+
+    componentDidMount(){
+        this.setState({
+        title: this.props.title,
+        content: this.props.content,
+        img: this.props.img,
+        postId: this.props.postId,
+        })
+        
     }
 
     handleInput = e => {
@@ -19,13 +31,17 @@ export default class UpdatePost extends Component {
         })
     }
 
-    handleClick = () => {
-        let updatedPost = {...this.props.post, ...this.state}
-        this.props.updatePost(updatedPost)
-        this.props.toggleEdit()
+    editPost() {
+        const { postId, title, content, img } = this.state
+        axios.put(`/api/post/${postId}`, {
+            postId, title, content, img
+        }).then(res => {
+            alert('Edit Success')
+        })
     }
 
     render (){
+        console.log(66666666, this.props, this.state)
         return(
             <div>
                 <input style={styles.border}
@@ -33,14 +49,14 @@ export default class UpdatePost extends Component {
                 placeholder='Title'
                 name='title'
                 onChange={this.handleInput}
-                value={this.state.name}></input>
+                value={this.state.title}></input>
                 <br/>
                 <input style={styles.border}
                 type='text'
                 placeholder='Content'
                 name='content'
                 onChange={this.handleInput}
-                value={this.state.name}></input>
+                value={this.state.content}></input>
                 <br/>
                 <input style={styles.border}
                 type='text'
@@ -49,7 +65,7 @@ export default class UpdatePost extends Component {
                 onChange={this.handleInput}
                 value={this.state.img}></input>
                 <br/>
-                <button style={styles.button} onClick={() => this.handleClick()}>Save</button>
+                <button style={styles.button} onClick={() => this.editPost()}>Save</button>
             </div>
 
         )     

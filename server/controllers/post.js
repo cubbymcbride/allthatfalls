@@ -51,12 +51,18 @@ module.exports = {
     },
 
     updatePost: (req, res) => {
-        const db = req.app.get('db');
-        const { id } = req.params;
+        const db = req.app.get("db");
+        console.log('comment controller req.params', req.params, req.body)
         const { title, content, img } = req.body;
-
-        db.post.updatePost([+id, title, content, img]).then(resp => {
-            res.status(200).send(resp)
+        const { postId } = req.params;
+ 
+        db.post.updatePost({
+          title, content, img, postId
         })
-    }
+        .then(() => res.status(200).send(content))
+        .catch(err => {
+            res.status(500).send({ errorMessage: "Something went wrong on update." });
+            console.log(err)
+          });
+      }
 }
