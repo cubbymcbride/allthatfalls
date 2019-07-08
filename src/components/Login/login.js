@@ -155,6 +155,7 @@ let styles = {
   },
 
   loginBox: {
+    color: 'white',
     height: '420px',
     width: '400px',
     paddingTop: '20px',

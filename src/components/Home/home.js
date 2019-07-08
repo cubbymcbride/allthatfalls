@@ -55,7 +55,8 @@ let styles = {
     fontFamily: 'Permanent Marker, cursive',
     color: 'white',
     border: '5px solid #696969',
-    borderStyle: 'inset'
+    borderStyle: 'inset',
+    overflowY: 'auto'
   },
   words: {
     fontFamily: 'Permanent Marker, cursive'

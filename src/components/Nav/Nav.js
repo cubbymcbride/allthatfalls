@@ -31,27 +31,27 @@ class Nav extends Component {
       </nav>
       <div class='socialbar'>
       <br/>
-        <a href='https://www.facebook.com/AllThatFallsID/'>
+        <a href='https://www.facebook.com/AllThatFallsID/' target="_blank" rel="noopener noreferrer">
         <img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png"/>
         </a>
         <br/>
         <br/>
-        <a href='https://www.instagram.com/allthatfallsid'>
+        <a href='https://www.instagram.com/allthatfallsid' target="_blank" rel="noopener noreferrer">
         <img src="https://img.icons8.com/ios/50/000000/instagram-new-filled.png"/>
         </a>
         <br/>
         <br/>
-        <a href='https://music.apple.com/us/artist/all-that-falls/1391484079'>
+        <a href='https://music.apple.com/us/artist/all-that-falls/1391484079' target="_blank" rel="noopener noreferrer">
         <img src="https://img.icons8.com/ios/50/000000/itunes.png"/>
         </a>
         <br/>
         <br/>
-        <a href='https://open.spotify.com/artist/4z2lutYXPIeffrdxTLmOHD'>
+        <a href='https://open.spotify.com/artist/4z2lutYXPIeffrdxTLmOHD' target="_blank" rel="noopener noreferrer">
         <img src="https://img.icons8.com/ios-filled/50/000000/spotify.png"/>
         </a>
         <br/>
         <br/>
-        <a href='https://play.google.com/store/music/artist?id=Aptsx6zcqodrurtwrdkymggl6gi'>
+        <a href='https://play.google.com/store/music/artist?id=Aptsx6zcqodrurtwrdkymggl6gi' target="_blank" rel="noopener noreferrer">
         <img src="https://img.icons8.com/ios-filled/50/000000/google-play.png"/>
         </a>
       </div>
@@ -89,10 +89,5 @@ let styles = {
     fontSize: 23,
     color: 'white',
     fontFamily: 'Permanent Marker, cursive',
-  },
-  sosh: {
-    height: '50px',
-    width: '50px',
-    color: 'black',
   }
 }
