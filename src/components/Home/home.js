@@ -1,7 +1,5 @@
 import React from 'react'
 import './home.css'
-import axios from 'axios'
-import Post from '../Post/post'
 import Posts from '../Posts/posts'
 
 
@@ -13,7 +11,7 @@ function Home() {
       <div style={styles.bg} className='background'>
       <h1 style={styles.words}>ATF FEED</h1>
       <div style={styles.card}>
-        <Posts/>
+        <Posts style={styles.center}/>
       </div>
       
       <footer style={styles.footer}> Copyright All That Falls © 2019
@@ -62,4 +60,9 @@ let styles = {
   words: {
     fontFamily: 'Permanent Marker, cursive'
   },
+  center: {
+    display: 'flex',
+    alignContent: 'center',
+    justifyContent: 'center'
+  }
 }

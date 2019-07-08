@@ -1,17 +1,7 @@
 module.exports = {
     read: async (req, res) => {
-        // try {
-        //     let db = req.app.get('db')
-        //     let posts = await db.post.getPosts()
-        //     res.send(posts)
-        // } catch (error) {
-        //     console.log('error fetching posts:', error)
-        //     res.status(500).send(error) 
-        // }
-        // this grabs data from the "db" established in index.js file
         let db = req.app.get('db')
         console.log('read part of comment controller', req.params)
-        // this works because inside the db folder we have the nationalParks.db file
         db.post.getPosts().then((response) => {
             console.log(response)
             res.send(response)
@@ -34,11 +24,6 @@ module.exports = {
 
     create: async (req, res) => {
             let db = req.app.get('db')
-            // let { title, content } = req.body
-            // if (!req.session.user)
-            // return res.status(401).send('user not authenticated')
-            // let { id: user_id } = req.session.user
-            // let user_id = req.session.user.id
             await db.post.createPost(req.body).then(() => res.sendStatus(200))   
     },
 

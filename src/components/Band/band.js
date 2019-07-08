@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import SocialSideBar from '../SocialSideBar/socialSideBar'
 import './band.css'
 
 export default class Band extends Component {
@@ -88,6 +87,6 @@ let styles = {
   photo: {
     width: '250px',
     height: '350px',
-    border: '5px inset #696969',
+    border: '5px inset white',
   }
 }

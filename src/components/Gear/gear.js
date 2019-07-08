@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import SocialSideBar from '../SocialSideBar/socialSideBar'
 import './gear.css'
 
 export default class Gear extends Component {
@@ -10,7 +9,7 @@ export default class Gear extends Component {
       <div style={styles.wrapper}>
         <div style={styles.card}>
         <h2>Bryant</h2>
-        <h3 style={styles.left}>Guitars:
+        <h3 style={styles.left}>Guitar:
         <ul height='0px'>
           <li> G+L Tribute ASAT </li>
         </ul>
@@ -33,9 +32,11 @@ export default class Gear extends Component {
         </ul>
         </h3>
         </div>
+        </div>
+        <div style={styles.wrapper}>
         <div style={styles.card}>
         <h2>Chuck</h2>
-        <h3 style={styles.left}>Guitars:
+        <h3 style={styles.left}>Guitar:
         <ul height='0px'>
           <li> Epiphone Les Paul Custom Silverburst</li>
         </ul>
@@ -58,15 +59,21 @@ export default class Gear extends Component {
         </ul>
         </h3>
         </div>
+        </div>
+        <br/>
+        <div style={styles.wrapper}>
         <div style={styles.card}>
         <h2>Ricky</h2>
         <h3 style={styles.left}>Drums: Crush Drums</h3>
         <h3 style={styles.left}>Cymbals: Zildjian Cymbals</h3>
         <h3 style={styles.left}>Hardware: Tama</h3>
         </div>
+        </div>
+        <br/>
+        <div style={styles.wrapper}>
         <div style={styles.card}>
         <h2>Cub</h2>
-        <h3 style={styles.left}>Basses:
+        <h3 style={styles.left}>Bass:
         <ul height='0px'>
           <li> Squire PJ Bass Special w/ Basslines SPB Quarter Pup</li>
           <li> Squire V Vintage Modified Jazz Bass</li>
@@ -87,7 +94,7 @@ export default class Gear extends Component {
         </ul>
         </h3>
         </div>
-      </div>
+        </div>
         <footer style={styles.footer}> Copyright All That Falls © 2019
       <br/>
       Website designed by Caleb McBride
@@ -102,14 +109,14 @@ export default class Gear extends Component {
 let styles = {
   bg: {
     backgroundColor: '#ffffff',
-    height: '200vh',
+    height: '370vh',
     width: '100vw',
   },
 
   wrapper: {
     display: 'flex',
-    flexWrap: 'wrap',
-    alignContent: 'space-between'
+    justifyContent: 'center',
+    alignitems: 'center'
   },
 
   footer: {
