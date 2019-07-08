@@ -54,10 +54,10 @@ module.exports = {
         const db = req.app.get("db");
         console.log('comment controller req.params', req.params, req.body)
         const { title, content, img } = req.body;
-        const { postId } = req.params;
+        const { id } = req.params;
  
         db.post.updatePost({
-          title, content, img, postId
+          title, content, img, postId: +id
         })
         .then(() => res.status(200).send(content))
         .catch(err => {

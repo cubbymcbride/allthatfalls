@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from "react-router-dom";
+import './Nav.css'
 import axios from 'axios'
 import whiteT from '../../images/ATFWhiteTransparent.png'
 
@@ -28,6 +29,32 @@ class Nav extends Component {
         <Link style={styles.word} to="/store">Store</Link>
         </div>
       </nav>
+      <div class='socialbar'>
+      <br/>
+        <a href='https://www.facebook.com/AllThatFallsID/'>
+        <img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png"/>
+        </a>
+        <br/>
+        <br/>
+        <a href='https://www.instagram.com/allthatfallsid'>
+        <img src="https://img.icons8.com/ios/50/000000/instagram-new-filled.png"/>
+        </a>
+        <br/>
+        <br/>
+        <a href='https://music.apple.com/us/artist/all-that-falls/1391484079'>
+        <img src="https://img.icons8.com/ios/50/000000/itunes.png"/>
+        </a>
+        <br/>
+        <br/>
+        <a href='https://open.spotify.com/artist/4z2lutYXPIeffrdxTLmOHD'>
+        <img src="https://img.icons8.com/ios-filled/50/000000/spotify.png"/>
+        </a>
+        <br/>
+        <br/>
+        <a href='https://play.google.com/store/music/artist?id=Aptsx6zcqodrurtwrdkymggl6gi'>
+        <img src="https://img.icons8.com/ios-filled/50/000000/google-play.png"/>
+        </a>
+      </div>
       </div>
     ) 
   }
@@ -62,5 +89,10 @@ let styles = {
     fontSize: 23,
     color: 'white',
     fontFamily: 'Permanent Marker, cursive',
+  },
+  sosh: {
+    height: '50px',
+    width: '50px',
+    color: 'black',
   }
 }

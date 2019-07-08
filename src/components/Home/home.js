@@ -15,8 +15,10 @@ function Home() {
       <div style={styles.card}>
         <Posts/>
       </div>
+      
       <footer style={styles.footer}> Copyright All That Falls © 2019
       <br/>
+    
       Website designed by Caleb McBride
       </footer>  
         </div>      

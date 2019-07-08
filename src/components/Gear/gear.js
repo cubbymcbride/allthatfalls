@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import SocialSideBar from '../SocialSideBar/socialSideBar'
 import './gear.css'
 
 export default class Gear extends Component {
@@ -59,9 +60,9 @@ export default class Gear extends Component {
         </div>
         <div style={styles.card}>
         <h2>Ricky</h2>
-        <h3 style={styles.left}>Drums:</h3>
-        <h3 style={styles.left}>Cymbals:</h3>
-        <h3 style={styles.left}>Hardware:</h3>
+        <h3 style={styles.left}>Drums: Crush Drums</h3>
+        <h3 style={styles.left}>Cymbals: Zildjian Cymbals</h3>
+        <h3 style={styles.left}>Hardware: Tama</h3>
         </div>
         <div style={styles.card}>
         <h2>Cub</h2>

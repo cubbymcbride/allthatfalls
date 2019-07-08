@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import SocialSideBar from '../SocialSideBar/socialSideBar'
 import './band.css'
 
 export default class Band extends Component {

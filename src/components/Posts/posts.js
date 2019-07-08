@@ -81,7 +81,7 @@ export default class Posts extends Component {
                        
                         
                         
-                        <button  style={styles.btn} onClick={() => this.setState({addModalShow: true})}>edit</button>
+                        <button  style={styles.button} onClick={() => this.setState({addModalShow: true})}>Edit</button>
 
                         <PostsModal className="openmodal"
            show={this.state.addModalShow} onHide={addModalClose} logFinished={postFinished} userId={post.user_id} title={post.title} content={post.content} img={post.img} flipUpdate={flipUpdate} postId={post.post_id}/>
