@@ -4,6 +4,7 @@ import axios from 'axios'
 import Post from '../Post/post'
 import PostsModal from '../Posts/postsModal'
 import { ButtonToolbar } from 'react-bootstrap';
+import './posts.css'
 
 class Posts extends Component {
     constructor() {
