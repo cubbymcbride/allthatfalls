@@ -109,7 +109,7 @@ export default class Gear extends Component {
 let styles = {
   bg: {
     backgroundColor: '#ffffff',
-    height: '370vh',
+    height: '330vh',
     width: '100vw',
   },
 
@@ -131,7 +131,7 @@ let styles = {
 
   card: {
     backgroundColor: '#000000',
-    height: '500px',
+    height: '35%',
     width: '650px',
     marginTop: '20px',
     marginBottom: '20px',

@@ -30,11 +30,11 @@ let styles = {
   bg: {
     backgroundColor: '#ffffff',
     height: '720vh',
-    width: '100vw',
+    width: '100%',
     flexDirection: 'column',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
 
   footer: {
@@ -48,7 +48,7 @@ let styles = {
   },
   card: {
     backgroundColor: '#000000',
-    height: '675vh',
+    height: '695vh',
     width: '750px',
     marginTop: '20px',
     marginBottom: '20px',

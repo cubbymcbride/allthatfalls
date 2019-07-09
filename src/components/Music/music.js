@@ -13,44 +13,64 @@ export default class Music extends Component {
             <h2>Call Us Failures</h2>
             <img src={'https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/Photos/CUF+Cover.jpg'} style={styles.pic}/>
             <h3>1. Walking To California</h3>
-            <h4 style={styles.spacing}>Key Lyric</h4>
+            <div style={styles.border}>
+            <h4 style={styles.spacing}>Key Lyric:</h4>
             <h2 style={styles.spacing}>"In my case California, I'll get there on my own"</h2>
+            </div>
             <ReactPlayer url='https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/Walking+To+California.wav' height="75px" width="" controls/>
             <h3>2. Rumors</h3>
-            <h4 style={styles.spacing}>Key Lyric</h4>
+            <div style={styles.border}>
+            <h4 style={styles.spacing}>Key Lyric:</h4>
             <h2 style={styles.spacing}>"I heard a rumor the other day that you slept with a guy that I hate"</h2>
+            </div>
             <ReactPlayer url='https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/Rumors.wav' height="75px" width="" controls/>
             <h3>3. Average American Day</h3>
-            <h4 style={styles.spacing}>Key Lyric</h4>
+            <div style={styles.border}>
+            <h4 style={styles.spacing}>Key Lyric:</h4>
             <h2 style={styles.spacing}>"Somehow it's all gonna work out"</h2>
+            </div>
             <ReactPlayer url='https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/Average+American+Day.wav' height="75px" width="" controls/>
             <h3>4. Shattered</h3>
-            <h4 style={styles.spacing}>Key Lyric</h4>
-            <h2 style={styles.spacing}>"These city lights..."</h2>
+            <div style={styles.border}>
+            <h4 style={styles.spacing}>Key Lyric:</h4>
+            <h2 style={styles.spacing}>"These city lights are the only part of this whole town that make staying worth a damn to me."</h2>
+            </div>
             <ReactPlayer url='https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/Shattered.wav' height="75px" width="" controls/>
             <h3>5. Out Of This World Girl</h3>
-            <h4 style={styles.spacing}>Key Lyric</h4>
+            <div style={styles.border}>
+            <h4 style={styles.spacing}>Key Lyric:</h4>
             <h2 style={styles.spacing}>"There's never been a girl like you"</h2>
+            </div>
             <ReactPlayer url='https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/Out+Of+This+World+Gorl.wav' height="75px" width="" controls/>
             <h3>6. Pirate Song</h3>
-            <h4 style={styles.spacing}>Key Lyric</h4>
+            <div style={styles.border}>
+            <h4 style={styles.spacing}>Key Lyric:</h4>
             <h2 style={styles.spacing}>"YOHO!"</h2>
+            </div>
             <ReactPlayer url='https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/Pirate+Song.wav' height="75px" width="" controls/>
             <h3>7. Bonnie + Clyde</h3>
-            <h4 style={styles.spacing}>Key Lyric</h4>
+            <div style={styles.border}>
+            <h4 style={styles.spacing}>Key Lyric:</h4>
             <h2 style={styles.spacing}>"Take my hand and follow me"</h2>
+            </div>
             <ReactPlayer url='https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/Bonnie+And+Clyde+Master.wav' height="75px" width="" controls/>
             <h3>8. Choke on This!</h3>
-            <h4 style={styles.spacing}>Key Lyric</h4>
+            <div style={styles.border}>
+            <h4 style={styles.spacing}>Key Lyric:</h4>
             <h2 style={styles.spacing}>"Choke on the words that you used to slit my throat"</h2>
+            </div>
             <ReactPlayer url='https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/Choke+On+This+Master.wav' height="75px" width="" controls/>
             <h3>9. All In/All Out</h3>
-            <h4 style={styles.spacing}>Key Lyric</h4>
+            <div style={styles.border}>
+            <h4 style={styles.spacing}>Key Lyric:</h4>
             <h2 style={styles.spacing}>"Why didn't I think to tell you a different lie"</h2>
+            </div>
             <ReactPlayer url='https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/All+In+All+Out.wav' height="75px" width="" controls/>
             <h3>10. Don't Let Them Bring You Down!</h3>
-            <h4 style={styles.spacing}>Key Lyric</h4>
+            <div style={styles.border}>
+            <h4 style={styles.spacing}>Key Lyric:</h4>
             <h2 style={styles.spacing}>"You can call us failures, hate our music, but you'll never stop us now"</h2>
+            </div>
             <ReactPlayer url="https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/Don't+Let+Them+Bring+You+Down.wav" height="75px" width="" controls/>
             <br/>
             All That Falls © 2018
@@ -90,7 +110,7 @@ let styles = {
   },
   card: {
     backgroundColor: '#000000',
-    height: '405vh',
+    height: '415vh',
     width: '775px',
     marginTop: '20px',
     marginBottom: '20px',
@@ -113,6 +133,10 @@ let styles = {
   pic: {
     height: '300px',
     width: '300px'
+  },
+
+  border: {
+    border: '3px inset white'
   }
   
 }
