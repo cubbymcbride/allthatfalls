@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from "react-router-dom";
+import {connect} from 'react-redux'
+import {clearAdmin} from '../../redux/reducers/admin'
 import './Nav.css'
 import axios from 'axios'
 import whiteT from '../../images/ATFWhiteTransparent.png'
@@ -11,7 +13,7 @@ class Nav extends Component {
   logout = () => {
     axios.post('/auth/logout').then(
       () => {
-      // console.log('logout')
+      this.props.clearAdmin()
       this.props.history.push('/login')}
     )
   }
@@ -60,7 +62,15 @@ class Nav extends Component {
   }
 }
 
-export default withRouter(Nav)
+function mapStateToProps(state){
+  return {
+    clearAdmin: state.admin.clearAdmin
+  }
+}
+
+export default withRouter(connect(
+  mapStateToProps, {clearAdmin}
+)(Nav))
 
 let styles = {
   logo: {
