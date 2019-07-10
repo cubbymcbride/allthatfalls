@@ -101,7 +101,7 @@ class Login extends Component {
                 <button style={styles.button} onClick={() => this.login()}>Login</button>
                 <br/>
                 <br/>
-                {/* <button style={styles.button} onClick={() => this.register()} >Register</button> */}
+                <button style={styles.button} onClick={() => this.register()} >Register</button>
                 </div>
       <footer style={styles.footer}> Copyright All That Falls © 2019
       <br/>
