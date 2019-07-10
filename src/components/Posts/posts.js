@@ -88,7 +88,7 @@ class Posts extends Component {
                         <PostsModal className="openmodal"
                         show={this.state.addModalShow} onHide={addModalClose} logFinished={postFinished} userId={post.user_id} title={post.title} content={post.content} img={post.img} flipUpdate={flipUpdate} postId={post.post_id}/>
                         
-                        <button style={styles.button} onClick={this.toggleEdit}>Cancel</button>
+                        
                         
                         
                         <button style={styles.button} onClick={() => this.deletePost(post.post_id)}>Delete</button> 
