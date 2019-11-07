@@ -6,17 +6,6 @@ export default class Band extends Component {
     return <div>
     <div style={styles.bg} className='background'>
     <h1 style={styles.words}>All That Falls is:</h1>
-    <div style={styles.card2}>
-      <h1 style={styles.spacing}>Bryant Wilson</h1>
-      <h2 style={styles.spacing}>Lead Vocals + Rhythm Guitar</h2>
-      <img src='https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/Photos/Bryant.jpg' style={styles.photo} />
-      <h2>Bio</h2>
-      <h5>
-      <p>Bryant Stanton Wilson is the latest and greatest addition to All That Falls. His powerful voice and musical prowess amplifies and sends ATF to the next level. His background in Pop-Punk, Jazz, and Rock make him a perfect fit in the writing and performance aspect of the band.</p>
-      <p>Bryant is a Snow College Graduate in Music. He is a multi-instrumentalist as well as the new vocalist for the band.</p>
-            
-</h5>
-    </div>
     
     <div style={styles.card}>
       <h1 style={styles.spacing}>Jacob "Chuck" McBride</h1>

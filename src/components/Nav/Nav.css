@@ -1,10 +1,9 @@
 .socialbar {
     width: 75px;
     height: 400px;
-    background: white;
-    align-items: flex-end;  
+    background: white; 
     margin-top: 30px;
-    position: absolute;
+    position: fixed;
     z-index: 5; 
     border: inset 5px #696969 ;  
 }

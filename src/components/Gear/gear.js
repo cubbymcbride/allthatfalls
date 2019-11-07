@@ -6,33 +6,6 @@ export default class Gear extends Component {
     return <div style={styles.bg} className='background'>
       <h1 style={styles.words}>All That Falls uses:</h1>
       <div>
-      <div style={styles.wrapper}>
-        <div style={styles.card}>
-        <h2>Bryant</h2>
-        <h3 style={styles.left}>Guitar:
-        <ul height='0px'>
-          <li> G+L Tribute ASAT </li>
-        </ul>
-        </h3>
-        <h3 style={styles.left}>Pedals:
-        <ul height='0px'>
-          <li> Ibanez TS9 TubeScreamer </li>
-          <li> Boss DS-1 Distortion </li>
-          <li> MXR Analog Chorus </li>
-          <li> Boss FS-5U</li>
-          <li> Boss DD-20 Giga-Delay</li>
-          <li> Boss PH-3 Phase Shifter</li>
-          <li> Boss RC-1 Loop Station</li>
-        </ul>
-        </h3>
-        <h3 style={styles.left}>Amp:
-        <ul height='0px'>
-          <li>Orange Crush 120H</li>
-          <li>Bugera 2x12 cab</li>
-        </ul>
-        </h3>
-        </div>
-        </div>
         <div style={styles.wrapper}>
         <div style={styles.card}>
         <h2>Chuck</h2>
@@ -67,6 +40,7 @@ export default class Gear extends Component {
         <h3 style={styles.left}>Drums: Crush Drums</h3>
         <h3 style={styles.left}>Cymbals: Zildjian Cymbals</h3>
         <h3 style={styles.left}>Hardware: Tama</h3>
+        <h3 style={styles.left}>Sticks: Vic Firth Mahogany 5B</h3>
         </div>
         </div>
         <br/>
