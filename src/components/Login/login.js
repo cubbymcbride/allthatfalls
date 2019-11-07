@@ -80,14 +80,14 @@ class Login extends Component {
                     type="text" 
                     placeholder="Email" 
                     onChange={this.handleChange}/>
-                    <br/>
-                    <p1 style={styles.font}>Username</p1>
+                    
+                    {/* <p1 style={styles.font}>Username</p1>
                     <br/>
                     <input style={styles.border}
                     name="username" 
                     type="text" 
                     placeholder="Username" 
-                    onChange={this.handleChange}/>
+                    onChange={this.handleChange}/> */}
                     <br/>
                 <p1 style={styles.font}>Password</p1>
                 <br/>
@@ -100,8 +100,7 @@ class Login extends Component {
                 <br/>
                 <button style={styles.button} onClick={() => this.login()}>Login</button>
                 <br/>
-                <br/>
-                <button style={styles.button} onClick={() => this.register()} >Register</button>
+                {/* <button style={styles.button} onClick={() => this.register()} >Register</button> */}
                 </div>
       <footer style={styles.footer}> Copyright All That Falls © 2019
       <br/>
@@ -156,7 +155,7 @@ let styles = {
 
   loginBox: {
     color: 'white',
-    height: '420px',
+    height: '320px',
     width: '400px',
     paddingTop: '20px',
     marginTop: '40px',

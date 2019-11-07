@@ -29,7 +29,6 @@ export default Home
 let styles = {
   bg: {
     backgroundColor: '#ffffff',
-    height: '720vh',
     width: '100%',
     flexDirection: 'column',
     display: 'flex',
@@ -48,10 +47,10 @@ let styles = {
   },
   card: {
     backgroundColor: '#000000',
-    height: '695vh',
     width: '750px',
     marginTop: '20px',
-    marginBottom: '20px',
+    marginBottom: '100px',
+    paddingBottom: '20px',
     fontFamily: 'Permanent Marker, cursive',
     color: 'white',
     border: '5px solid #696969',

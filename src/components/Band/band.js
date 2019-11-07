@@ -19,7 +19,7 @@ export default class Band extends Component {
             </h5>
     </div>
 
-    <div style={styles.card2}>
+    <div style={styles.card}>
       <h1 style={styles.spacing}>Enrique "Ricky" Avila</h1>
       <h2 style={styles.spacing}>Drums + Backing Vocals</h2>
       <img src='https://allthatfallsmusicbucket.s3-us-west-2.amazonaws.com/Photos/Rick.jpg' style={styles.photo} />
@@ -55,7 +55,6 @@ export default class Band extends Component {
 let styles = {
   bg: {
     backgroundColor: '#ffffff',
-    height: '625vh',
     width: '100vw',
     flexDirection: 'column',
     display: 'flex',
@@ -64,10 +63,9 @@ let styles = {
   },
   card: {
     backgroundColor: '#000000',
-    height: '26%',
     width: '750px',
     marginTop: '20px',
-    marginBottom: '20px',
+    marginBottom: '100px',
     fontFamily: 'Permanent Marker, cursive',
     color: 'white',
     border: '5px solid #696969',
