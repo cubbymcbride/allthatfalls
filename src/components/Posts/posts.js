@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import axios from 'axios'
-import Post from '../Post/post'
 import PostsModal from '../Posts/postsModal'
 import { ButtonToolbar } from 'react-bootstrap';
 import './posts.css'
@@ -93,9 +92,9 @@ class Posts extends Component {
                         
                         <button style={styles.button} onClick={() => this.deletePost(post.post_id)}>Delete</button> 
 
-                    <div>
+                    {/* <div>
                         <Post posts={this.state.posts} style={styles.center}/> 
-                    </div>
+                    </div> */}
                     </div>
                     ) : (null)
                 }

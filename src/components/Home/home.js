@@ -1,6 +1,7 @@
 import React from 'react'
 import './home.css'
 import Posts from '../Posts/posts'
+import Post from '../Post/post'
 
 
 
@@ -12,6 +13,7 @@ function Home() {
       <h1 style={styles.words}>ATF FEED</h1>
       <div style={styles.card}>
         <Posts style={styles.center}/>
+        
       </div>
       
       <footer style={styles.footer}> Copyright All That Falls © 2019
